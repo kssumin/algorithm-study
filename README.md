@@ -24,7 +24,7 @@
     `git checkout -b {본인 아이디}`
 
 3. 문제를 풀고 add, commit 합니다.
-   - commmit 명은 `[본인이름] 해당 주차 알고리즘 주제`로 통일합니다.
+   - commmit 명은 `[Backjoon] 알고리즘 번호`로 통일합니다.
    - 기능 구현을 완료한 후 로컬 저장소에 변경된 부분을 반영하기 위해 add, commit 명령어를 사용합니다.
    
    `git add .`
