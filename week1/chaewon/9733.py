@@ -1,4 +1,5 @@
-d = {1: 'a', 2: 'b'}
+print('a')
 
-print(d.get(1))
 
+for i in range(3):
+    print(i)

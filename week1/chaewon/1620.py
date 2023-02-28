@@ -18,7 +18,6 @@ for i in range(n):
 for i in range(m):
     if quest[i] in pokemons_num_name:
         print(pokemons_num_name.get(quest[i]))
-        print('')
     elif quest[i] in pokemons_name_num:
         print(pokemons_name_num.get(quest[i]))
 
