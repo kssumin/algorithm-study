@@ -1,37 +1,27 @@
 '''
-9733번 - 꿀벌
+2121번 - 넷이 놀기
 난이도 - 실버 3
 알고리즘 분류 -
-js 포기,,
 '''
-
-# 입력
 import sys
-types = ['Re', 'Pt', 'Cc', 'Ea', 'Tb', 'Cm', 'Ex']
 
-arr = []
+n = int(sys.stdin.readline())
+a, b = map(int, sys.stdin.readline().split())
+points = []
+for _ in range(n):
+    p = tuple((map(int, sys.stdin.readline().split())))
+    points.append(p)
 
-lines = sys.stdin.readlines()
-for line in lines:
-    arr = arr + list(line.split())
+points_set = set(points)
+count = 0
 
-total = len(arr)
+for p in points:
+    w, h = p
+    p1 = (w + a, h)
+    p2 = (w, h+b)
+    p3 = (w+a, h+b)
 
-hashs = {}
+    if (p1 in points_set) and (p2 in points_set) and (p3 in points_set):
+        count += 1
 
-for i in arr:
-    if i in hashs:
-        hashs[i] += 1
-    else:
-        hashs[i] = 1
-
-for t in types:
-    if t in hashs:
-        print('{} {} {:.2f}'.format(t, hashs[t], hashs[t]/total))
-    else:
-        print('{} 0 0.00'.format(type))
-
-print(f'Total {total} 1.00')
-
-# 어디서 런타임 에러가 뜨는지 모르겠어요.. 찾아주세용 ㅠㅠㅜ
-# 정답 코드는 민규꺼 봤습니다!
+print(count)
