@@ -1,4 +1,3 @@
-10
-6 3 2 10 10 10 -10 -10 7 3
-8
-10 9 -5 2 3 4 5 -10
+Cc Pt Pt Re Tb Re Cm Cm Re Pt Pt Re Ea Ea Pt Pt
+
+Pt Re Re Cb Cb Pt Pt Cb
