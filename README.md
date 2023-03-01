@@ -24,12 +24,14 @@
     `git checkout -b {본인 아이디}`
 
 3. 문제를 풀고 add, commit 합니다.
-   - commmit 명은 `[본인이름] 해당 주차 알고리즘 주제`로 통일합니다.
+   - 문제풀이 commmit 명은 `[이름] 백준 - 알고리즘 번호`로 통일합니다.
+   - 이론 commit 명은 `[이름] 알고리즘 주제`로 통일합니다.
    - 기능 구현을 완료한 후 로컬 저장소에 변경된 부분을 반영하기 위해 add, commit 명령어를 사용합니다.
    
    `git add .`
 
-   `git commit -m "[김수민]다익스트라 알고리즘"`
+   `git commit -m "[김수민] 백준 - 9733"`
+   `git commit -m "[김수민] 다익스트라 알고리즘"`
      <img width="871" alt="image" src="https://user-images.githubusercontent.com/88534959/221366418-08186092-0f9d-4d7b-b1b0-a9ab6cefd94a.png">
      <img width="935" alt="image" src="https://user-images.githubusercontent.com/88534959/221366469-bc4f8e45-ac8c-4662-a82d-589283ffa692.png">
      <img width="1185" alt="image" src="https://user-images.githubusercontent.com/88534959/221366478-5ea6f5c4-6e73-412b-bdaa-5bc77cd8cb81.png">
