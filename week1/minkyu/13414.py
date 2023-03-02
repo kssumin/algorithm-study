@@ -17,6 +17,11 @@ for num in class_order:
     result += 1
 
 """
+풀이
+학번을 순서대로 class_order 에 넣어준다. 만약 한 번 더 입력이 들어오면 나중으로 순서가 밀려난다.
+value 값이 작은 순서대로 정렬을 해준다.
+K 번 출력 될때까지 출력한다.
+
 처음에 짰던 코드는 시간 초과가 떴다.
 input = sys.stdin.readline
 
