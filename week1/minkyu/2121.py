@@ -17,6 +17,11 @@ for i in range(N):
 print(result)
 
 """
+풀이
+일단 점들을 리스트에 담아준다.
+for 문을 돌면서 그 점에서 사각형이 만들어질 수 있는 점들을 확인한다.
+이때 list 에서 확인하지 않고 dot_set 를 만들어 dot_set 에서 확인한다.
+ 
 첫 번째 짠 코드인데 시간 초과가 날 거 같았지만 그래도 일단 짜봤다... 역시 시간 초과가 났다.
 input = sys.stdin.readline
 
