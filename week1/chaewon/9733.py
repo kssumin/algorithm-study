@@ -1,4 +1,1 @@
-d = {1: 'a', 2: 'b'}
-
-print(d.get(1))
-
+# BJ 9733 : 꿀벌 / SILVER V /
