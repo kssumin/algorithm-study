@@ -24,10 +24,14 @@ public class Backjoon_10816_V2 {
         st = new StringTokenizer(br.readLine(), " ");
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < M; i++) {
+
+        for(int i = 0; i < M; i++) {
             int key = Integer.parseInt(st.nextToken());
 
+            // upperBound와 lowerBound의 차이 값을 구한다.
+            sb.append(upperBound(arr, key) - lowerBound(arr, key)).append(' ');
         }
+        System.out.println(sb);
 
     }
 
