@@ -1,7 +1,7 @@
 # algorithm_study_version2
 
 ## Rule
-- 스터디 결과로 나오는 산출물은 깃허브에 `매주 금요일`까지 올립니다.
+- 스터디 결과로 나오는 산출물은 깃허브에 `매주 토요일 00시`까지 올립니다.
     - 자료구조/알고리즘 이론 공부 : 해당 주차의 공부 내역을 md 파일로 업로드합니다.
       - 해당 주차의 알고리즘 개념을 공부한 후, 정리한 내용을 `x주차/본인폴더`에  .md파일로 올립니다.
     - 코딩 테스트 문제 풀이
@@ -24,12 +24,14 @@
     `git checkout -b {본인 아이디}`
 
 3. 문제를 풀고 add, commit 합니다.
-   - commmit 명은 `[본인이름] 해당 주차 알고리즘 주제`로 통일합니다.
+   - 문제풀이 commmit 명은 `[이름] 백준 - 알고리즘 번호`로 통일합니다.
+   - 이론 commit 명은 `[이름] 알고리즘 주제`로 통일합니다.
    - 기능 구현을 완료한 후 로컬 저장소에 변경된 부분을 반영하기 위해 add, commit 명령어를 사용합니다.
    
    `git add .`
 
-   `git commit -m "[김수민]다익스트라 알고리즘"`
+   `git commit -m "[김수민] 백준 - 9733"`
+   `git commit -m "[김수민] 다익스트라 알고리즘"`
      <img width="871" alt="image" src="https://user-images.githubusercontent.com/88534959/221366418-08186092-0f9d-4d7b-b1b0-a9ab6cefd94a.png">
      <img width="935" alt="image" src="https://user-images.githubusercontent.com/88534959/221366469-bc4f8e45-ac8c-4662-a82d-589283ffa692.png">
      <img width="1185" alt="image" src="https://user-images.githubusercontent.com/88534959/221366478-5ea6f5c4-6e73-412b-bdaa-5bc77cd8cb81.png">
