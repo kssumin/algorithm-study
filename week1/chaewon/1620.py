@@ -25,7 +25,7 @@ for i in range(m):
 '''
 NOTE:
 처음엔 key : num, value : name 인 하나의 딕셔너리를 생성했는데,
-만약 quest에 name이 들어온다면 name value값으로 key값을 찾는 데에 시간이 꽤 걸리기 때문에 ( if name in list(dictionary.values()): )
+만약 quest에 name이 들어온다면 name value값으로 key값을 찾는 데에 시간이 꽤 걸리기 때문에 ( num for num, name in dict.items() if name == quest[i] )
 아예 key : name, value : num 인 딕셔너리를 하나 더 생성했다. 
 
 쉬운 문제 바로 맞혀서 기분이 좋다
