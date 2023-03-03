@@ -29,9 +29,11 @@ for t in types:
     if t in hashs:
         print('{} {} {:.2f}'.format(t, hashs[t], hashs[t]/total))
     else:
-        print('{} 0 0.00'.format(type))
+        print('{} 0 0.00'.format(t))
 
 print(f'Total {total} 1.00')
 
 # 어디서 런타임 에러가 뜨는지 모르겠어요.. 찾아주세용 ㅠㅠㅜ
 # 정답 코드는 민규꺼 봤습니다!
+
+# -> 코드 다시 보다가 틀린 부분 찾았습니다!!!!!
