@@ -1,5 +1,5 @@
 ---
-name: debate issue template
+name: debate
 about: debate
 title: "[Debate]"
 labels: debate
