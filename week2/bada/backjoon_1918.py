@@ -27,18 +27,22 @@ from collections import deque
 infix = list(sys.stdin.readline().strip())
 postfix = []
 stack = deque()
+
+# 우선순위
 priority = {"*":1, "/":1, "+":2, "-":2, "(":3, ")":3}
 
 for s in infix:
+    # 피연산자면 push
     if s.isalpha():
         postfix.append(s)
     else:
+        # 스택이 비었으면 push
         if len(stack) == 0:
             stack.append(s)
         else:
-            if s == "(":
+            if s == "(": # "("이면 push
                 stack.append(s)
-            elif s == ")":
+            elif s == ")": # ")"이면 "(" 나올때까지 pop
                 while stack:
                     top = stack.pop()
                     if top == "(":
@@ -48,7 +52,7 @@ for s in infix:
             else:
                 while stack:
                     top = stack.pop()
-                    if priority[top] <= priority[s]:
+                    if priority[top] <= priority[s]: # top의 우선순위가 s 우선순위보다 낮을 때까지 출력
                         postfix.append(top)
                     else:
                         stack.append(top)
