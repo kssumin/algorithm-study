@@ -45,96 +45,92 @@
     ![](https://steemitimages.com/DQme3vRe1nGigGs1GfZkU5ffbufAs1gSNT4MKqR7F1PcxCi/IEEE754.png)
 
     - ex) 고정소수점으로 표현한 2.3을 2진수 부동소수점 방식으로 표현해보기
-            10.0100 1100 1100 110 ...
-          → 1.0010011001100110 * 2^1 : 맨 앞의 1 바로 뒤로 소수점 배치
-            - 2^1의 1 = '지수', IEEE 754에서는 지수 + 127 값을 기록
-            - 소수점 이후 숫자열 = '가수'
+            10.0100 1100 1100 110 ...  
+          → 1.0010011001100110 * 2^1 : 맨 앞의 1 바로 뒤로 소수점 배치  
+            - 2^1의 1 = '지수', IEEE 754에서는 지수 + 127 값을 기록  
+            - 소수점 이후 숫자열 = '가수'  
             
-            즉,
-            - 부호 비트(1bit) : 0 (양수)
-            - 지수 비트(8bit) : 1000 0000 (127 + 1 = 128)
-            - 가수 비트(23bit) : 0010 0110 0110 0110 0000 000
+            즉,  
+            - 부호 비트(1bit) : 0 (양수)  
+            - 지수 비트(8bit) : 1000 0000 (127 + 1 = 128)  
+            - 가수 비트(23bit) : 0010 0110 0110 0110 0000 000  
 
-    - 부동소수점을 사용하더라도 정확한 값을 나타낼 수는 없음 → **부동소수점의 오류**
+    - 부동소수점을 사용하더라도 정확한 값을 나타낼 수는 없음 → **부동소수점의 오류**  
 
 
-- 부동소수점의 오류 예시
+- 부동소수점의 오류 예시  
 
-```python
-result = 0
-for _ in range(100):
-    result += 0.1
+    ```python
+    result = 0
+    for _ in range(100):
+        result += 0.1
+        
+    print(result)
+    >>> 9.99999999998
+    ```  
 
-print(result)
->>> 9.99999999998
-```
-
-- Python에서의 해결책
-
-    - `decimal.Decimal`, `math.fsum()`, `round()`, `math.is_close()` 사용하기
+- Python에서의 해결책  
+    - `decimal.Decimal`, `math.fsum()`, `round()`, `math.is_close()` 사용하기  
 
 
     1) `decimal.Decimal`
 
-    ```python
-    import decimal
-    decimal.Decimal('0.1') * 3 == decimal.Decimal('0.3')
-    >>> True
+        ```python
+        import decimal
+        decimal.Decimal('0.1') * 3 == decimal.Decimal('0.3')
+        >>> True
 
-    decimal.Decimal('0.3') + 2
-    >>> Decimal('2.3')
-    ```
+        decimal.Decimal('0.3') + 2
+        >>> Decimal('2.3')
+        ```  
+        - 한계
+            ```python
+            decimal.Decimal(0.1 * 3)
+            >>> Decimal('0.3000000000000000444089209850062616169452667236328125')
+            ```  
+  
 
-    - 한계
-    ```python
-    decimal.Decimal(0.1 * 3)
-    >>> Decimal('0.3000000000000000444089209850062616169452667236328125')
-    ```
-
-
-    2) `math.fsum()`
-    ```python
-    math.fsum([.1] * 10)
-    >>> 1.0
-    ```
-
-    - 한계
-    ```python
-    math.fsum([.1, .2])
-    >>> 0.30000000000000004
-    ```
-
+    2) `math.fsum()`  
+        ```python
+        math.fsum([.1] * 10)
+        >>> 1.0
+        ```  
+        - 한계
+            ```python
+            math.fsum([.1, .2])
+            >>> 0.30000000000000004
+            ```  
+  
 
     3) `round()`
-    ```python
-    round(0.1 + 0.1 + 0.1, 10) == round(0.3, 10)
-    >>> True
-    ```
-
-    - 한계
-    ```python
-    round(0.125, 2)
-    >>> 0.12
-    round(0.135, 2)
-    >>> 0.14
-    ```
-
+        ```python
+        round(0.1 + 0.1 + 0.1, 10) == round(0.3, 10)
+        >>> True
+        ```
+        - 한계
+            ```python
+            round(0.125, 2)
+            >>> 0.12
+            round(0.135, 2)
+            >>> 0.14
+            ```  
+  
 
     4) `math.is_close()`
-    ```python
-    import math
-    math.isclose(0.1*3, 0.3)
-    >>> True
-    math.isclose(1.2-0.1, 1.1)
-    >>> True
-    math.isclose(0.1*0.1, 0.01)
-    >>> True
-    ```
+        ```python
+        import math
+        math.isclose(0.1*3, 0.3)
+        >>> True
+        math.isclose(1.2-0.1, 1.1)
+        >>> True
+        math.isclose(0.1*0.1, 0.01)
+        >>> True
+        ```
 
 
 
 
 ### 참고문헌
-https://wikidocs.net/106276
-https://steemit.com/kr/@modolee/floating-point
-https://docs.python.org/ko/dev/tutorial/floatingpoint.html
+https://wikidocs.net/106276  
+https://steemit.com/kr/@modolee/floating-point  
+https://docs.python.org/ko/dev/tutorial/floatingpoint.html  
