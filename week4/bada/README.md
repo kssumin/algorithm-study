@@ -9,3 +9,6 @@
 
 2470번 두 용액
 : https://velog.io/@bada308/%EB%B0%B1%EC%A4%80-%EB%91%90-%EC%9A%A9%EC%95%A1
+
+2437번 저울
+: https://velog.io/@bada308/%EB%B0%B1%EC%A4%80-%EC%A0%80%EC%9A%B8
