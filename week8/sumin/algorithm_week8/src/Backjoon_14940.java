@@ -23,30 +23,30 @@ public class Backjoon_14940 {
 
         n = Integer.parseInt(s[0]);
         m = Integer.parseInt(s[1]);
-        arr = new int[n + 1][m + 1];
-        answer = new int[n + 1][m + 1];
-        isChecked = new boolean[n + 1][m + 1];
+        arr = new int[n][m];
+        answer = new int[n][m];
+        isChecked = new boolean[n][m];
 
         initGraph();
         Map<String, Integer> start = findStart();
         bfs(start.get("x"), start.get("y"));
         cantNotGo();
 
-        for (int i = 1; i < n + 1; i++) {
-            for (int j = 1; j < n + 1; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
                 sb.append(answer[i][j] + " ");
             }
             sb.append("\n");
         }
 
-        System.out.println(sb);
+        System.out.println(sb.toString());
     }
 
     private static void initGraph() throws IOException {
-        for (int i = 1; i < n + 1; i++) {
+        for (int i = 0; i < n; i++) {
             String[] line = br.readLine().split(" ");
-            for (int j = 1; j < m + 1; j++) {
-                arr[i][j] = Integer.parseInt(line[j - 1]);
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = Integer.parseInt(line[j]);
             }
         }
     }
@@ -54,15 +54,17 @@ public class Backjoon_14940 {
     // 목표지점(2) 찾기
     private static Map<String, Integer> findStart() {
         HashMap<String, Integer> map = new HashMap<>();
-        for (int i = 1; i < n + 1; i++) {
-            for (int j = 1; j < m + 1; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
                 if (arr[i][j] == 2) {
                     map.put("x", i);
                     map.put("y", j);
                     break;
                 }
             }
-            break;
+            if(!map.isEmpty()){
+                break;
+            }
         }
         return map;
     }
@@ -98,11 +100,11 @@ public class Backjoon_14940 {
     }
 
     private static boolean isRangedWithX(int newX) {
-        return newX >= 1 && newX <= n;
+        return newX >= 0 && newX < n;
     }
 
     private static boolean isRangedWithY(int newY) {
-        return newY >= 1 && newY <= m;
+        return newY >= 0 && newY < m;
     }
 
     private static boolean canGo(int newX, int newY) {
@@ -110,8 +112,8 @@ public class Backjoon_14940 {
     }
 
     private static void cantNotGo() {
-        for (int i = 1; i < n + 1; i++) {
-            for (int j = 1; j < m + 1; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
                 if (canGo(i, j) && !isChecked[i][j]) {
                     answer[i][j] = -1;
                 }
