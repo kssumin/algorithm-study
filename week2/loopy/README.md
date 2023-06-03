@@ -65,6 +65,6 @@ while openList is not empty:
 
 ## 링크
 
-[최단 경로 탑색 - A*알고리즘](http://www.gisdeveloper.co.kr/?p=3897)
-[A*알고리즘 정의 및 개념](https://itmining.tistory.com/66)
+[최단 경로 탑색 - A*알고리즘](http://www.gisdeveloper.co.kr/?p=3897)  
+[A*알고리즘 정의 및 개념](https://itmining.tistory.com/66)  
 [파이썬A* 최단 경롤 찾기 알고리즘](https://choiseokwon.tistory.com/210)
