@@ -30,8 +30,6 @@ const isOverBoard = (x, y) => x >= N || y >= N || x <= -1 || y <= -1;
 
 let result = [];
 const check = (x, y, next) => {
-  if (isOverBoard(x, y)) return 0;
-
   let key = board[x][y];
   let count = 0;
   while (!isOverBoard(x, y)) {
@@ -44,21 +42,23 @@ const check = (x, y, next) => {
   return count;
 };
 
-for (let i = 0; i < board.length; i++) {
-  for (let j = 0; j < board[i].length; j++) {
+for (let i = 0; i < N; i++) {
+  for (let j = 0; j < N; j++) {
     for (let k = 0; k < 4; k++) {
-      if (isOverBoard(i + m[k][0], j + m[k][1])) continue;
-      switchBoard(i, j, i + m[k][0], j + m[k][1]);
+      let i2 = i + m[k][0];
+      let j2 = j + m[k][1];
+      if (isOverBoard(i2, j2)) continue;
+      switchBoard(i, j, i2, j2);
       result.push(
-        Math.min(
-          ...Array(4).map((i) => {
-            check(i, j, (i, j) => [i + m[k][0], j + m[k][0]]);
-          })
+        Math.max(
+          ...Array.from({ length: 4 }, (_, i) => i)
+            .map((v) => check(i, j, (i, j) => [i + m[v][0], j + m[v][1]]))
+            .filter((v) => v)
         )
       );
-      switchBoard(i + m[k][0], j + m[k][1], i, j);
+      switchBoard(i2, j2, i, j);
     }
   }
 }
 
-console.log(Math.min(...result));
+console.log(Math.max(...result));
